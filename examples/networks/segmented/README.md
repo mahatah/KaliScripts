@@ -28,7 +28,7 @@ Additional Route Details:
 ### Assumptions
 1. Dual-Homed Compromised Host is already compromised by the attacker
 2. The attacker has escalated their privileges to Administrator, SYSTEM, or equivalent
-3. Interaction via RDP, WinRM, webshell, xp_cmdshell, etc., with Target Internal Client is already direct possible via session (RDP or otherwise) on Dual-Homed Compromised Host.
+3. Interaction via RDP, WinRM, webshell, xp_cmdshell, etc., with Target Internal Client is already directly possible via session (RDP or otherwise) on Dual-Homed Compromised Host.
 4. The unaltered MSFVenom payload is sufficient to bypass defenses such as AMSI and Defender. During real engagements default payloads like this should not be used. For the purposes of simplifying this example, we assume the payload will execute properly.
 ---
 ### Step-By-Step Instructions For Pivot
