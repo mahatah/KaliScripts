@@ -2,7 +2,7 @@
 As a penetration tester, you are expected to know how to pivot between hosts even when they reside on segmented networks. Segmented hosts are typically in-scope and often engagement target(s). The following example examines one method to accomplish segmented network pivoting via a dual-homed server compromised by the attacker without writing any third-party tools to disk.
 
 ### Simplified Segmented Network
-![[Pasted image 20241121235748.png]]
+
 
 ### Simplified Segmented Network Details
 The following are the relevant example details:
