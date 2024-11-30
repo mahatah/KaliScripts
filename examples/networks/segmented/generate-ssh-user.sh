@@ -1,10 +1,10 @@
 #!/bin/zsh
 
-# Script used to create temporary users for SSH reverse tunnels. Will add users to SSH users and offer change SSHD authentication
-#   to password or identity file. If the latter is chose, identity files (private / public key) are created and their filepaths
-#   are provided. Default choice is to configure SSHD for password authentication since using identity files require writing to disk.
-#   User's original SSHD config, located at /etc/ssh/sshd_config, is copied on first run and may be restored with by specifying the
-#   "--clean" flag. Doing so will also delete all users created with this script, including their home directory.
+# Script used to create temporary users for SSH reverse tunnels. Will add users to SSH users and offer to change SSHD authentication
+#   to password or identity file. If the latter is chosen, identity files (private / public key) are created and their filepaths
+#   are displayed. Default choice is to configure SSHD for password authentication since using identity files requires writing to disk.
+#   User's original SSHD config, located at /etc/ssh/sshd_config, is backed up on first run and may be restored by specifying the
+#   "--clean" flag. Doing so will also delete all script created users and their home directory(ies).
 
 # Ensure script is run as root
 if [[ "$EUID" -ne 0 ]]; then
